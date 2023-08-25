@@ -1,0 +1,53 @@
+###
+GET http://localhost:3500/
+###
+POST http://localhost:3500/user-register/
+Content-Type: application/json
+
+{   
+    "username":"test_user",
+    "password": "2023", 
+    "first_name" : "g",
+    "last_name" : "ramana" , 
+    "phonenumber" : "9998889992",
+    "email": "veerendratest451@gmail.comd",
+    "age" : "25", 
+    "father_name" : "sbp" ,
+    "city": "hyderabad"  ,
+    "country" : "India" ,
+    "state" :  "Telangana",
+    "gender" : "female"
+}
+###
+POST http://localhost:3500/user-login/
+Content-Type: application/json
+
+{   
+    "username":"chandu",
+    "password": "2023"
+}
+###
+POST http://localhost:3500/create-restaurant/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+Content-Type: application/json
+
+{   
+   "restaurant_name" : "Sample Restaurant2",
+    "restaurant_type" : "multi-cuisiene",
+    "restaurant_location" :  "Hyderabad"
+}
+###
+PUT http://localhost:3500/update-restaurant/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+Content-Type: application/json
+
+{   
+   "restaurant_name" : "Sample Restaurant",
+    "restaurant_type" : "multi-cuisiene",
+    "restaurant_location" :  "Hyderabad"
+}
+###
+DELETE http://localhost:3500/delete-restaurant/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+
+
