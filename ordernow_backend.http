@@ -32,9 +32,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoY
 Content-Type: application/json
 
 {   
-   "restaurant_name" : "Sample Restaurant2",
+   "restaurant_name" : "Sample Restaurant3",
     "restaurant_type" : "multi-cuisiene",
-    "restaurant_location" :  "Hyderabad"
+    "restaurant_location" :  "Hyderabad",
+    "restaurant_rating" : 4
 }
 ###
 PUT http://localhost:3500/update-restaurant/1
@@ -44,10 +45,53 @@ Content-Type: application/json
 {   
    "restaurant_name" : "Sample Restaurant",
     "restaurant_type" : "multi-cuisiene",
-    "restaurant_location" :  "Hyderabad"
+    "restaurant_location" :  "Hyderabad",
+    "restaurant_rating" : 4
 }
 ###
-DELETE http://localhost:3500/delete-restaurant/2
+DELETE http://localhost:3500/delete-restaurant/4
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
 
+###
+POST http://localhost:3500/create-menu-item/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+Content-Type: application/json
 
+{   
+   "item_name" : "Idli2",
+   "item_price" : 30,
+   "item_availability" : true,
+   "item_image" : "https://res.cloudinary.com/v45/image/upload/v1693112500/Idli-Recipe_iixmgy.jpg" ,
+   "item_description" : "Idli or idly(/ɪdliː/ (listen))  (plural: idlis) is a type of savoury rice cake, originating from South India, popular as a breakfast food in Southern India and in Sri Lanka. The cakes are made by steaming a batter consisting of fermented black lentils (de-husked) and rice. The fermentation process breaks down the starches so that they are more readily metabolised by the body.Idli has several variations, including rava idli, which is made from semolina. Regional variants include sanna of Konkan.",
+   "item_discount" : 0,
+   "item_type" : true,
+   "restaurant_id" : 1,
+   "item_rating" : 4.5
+}
+
+###
+PUT http://localhost:3500/update-menu-item/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+Content-Type: application/json
+
+{   
+   "item_name" : "Idli",
+   "item_price" : 30,
+   "item_availability" : "available",
+   "item_image" : "https://res.cloudinary.com/v45/image/upload/v1693112500/Idli-Recipe_iixmgy" ,
+   "item_description" : "Idli or idly(/ɪdliː/ (listen))  (plural: idlis) is a type of savoury rice cake, originating from South India, popular as a breakfast food in Southern India and in Sri Lanka. The cakes are made by steaming a batter consisting of fermented black lentils (de-husked) and rice. The fermentation process breaks down the starches so that they are more readily metabolised by the body.Idli has several variations, including rava idli, which is made from semolina. Regional variants include sanna of Konkan.",
+   "item_discount" : 0,
+   "item_type" : true,
+   "restaurant_id" : 1,
+   "item_rating" : 4.5
+}
+
+###
+DELETE http://localhost:3500/delete-menu-item/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+
+###
+GET http://localhost:3500/all-restaurants-details?search_q=&rating=3&location=hyderabad&item_name=idli&order_by=ASC
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kdSIsImlkIjoyLCJpYXQiOjE2OTI5Mzc0ODJ9.i-2mJA7O-EPA_WORHYkYj8xiVKbJMPIMrmHEBY06YFU
+
+###
